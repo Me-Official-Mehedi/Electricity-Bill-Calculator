@@ -179,6 +179,7 @@
       gap: 0.625rem;
       width: 100%;
       max-width: 300px;
+      margin: 0 auto;
     }
     .btn {
       display: inline-flex;
@@ -276,9 +277,10 @@
       border-radius: var(--radius);
       padding: 1.25rem;
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 0.875rem;
       transition: all 0.2s ease;
+      text-align: left;
     }
     .feat:active { background: var(--bg-card-hover); transform: scale(0.985); }
     .feat-icon {
@@ -288,6 +290,7 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 1.15rem;
       box-shadow: 0 3px 12px rgba(99,102,241,0.25);
+      flex-shrink: 0;
     }
     .feat-text h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.15rem; }
     .feat-text p { color: var(--text-muted); font-size: 0.82rem; line-height: 1.55; }
@@ -311,6 +314,7 @@
       font-size: 1rem; font-weight: 500; color: var(--text-muted);
       text-align: center; padding: 1rem;
       display: flex; flex-direction: column; gap: 0.5rem;
+      align-items: center;
     }
     .ss-item .ss-placeholder span { font-size: 0.75rem; opacity: 0.6; }
 
@@ -381,12 +385,13 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 1.25rem;
+      text-align: center;
     }
     .testimonial .stars { color: #f59e0b; font-size: 0.9rem; letter-spacing: 2px; }
     .testimonial p { color: var(--text-dim); font-size: 0.9rem; margin: 0.5rem 0; line-height: 1.5; }
     .testimonial .author { color: var(--text-muted); font-size: 0.8rem; font-weight: 500; }
 
-    /* ----- FAQ ----- */
+    /* ----- FAQ (centered) ----- */
     .faq { padding: 3rem 1.25rem; max-width: 700px; margin: 0 auto; }
     .faq-item {
       background: var(--bg-card);
@@ -394,6 +399,7 @@
       border-radius: var(--radius);
       margin-bottom: 0.75rem;
       overflow: hidden;
+      width: 100%;
     }
     .faq-question {
       width: 100%;
@@ -421,6 +427,7 @@
       color: var(--text-muted);
       font-size: 0.88rem;
       line-height: 1.6;
+      text-align: left;
     }
     .faq-answer.open {
       max-height: 300px;
@@ -450,7 +457,7 @@
     .dl-card h2 { font-size: clamp(1.3rem, 4.5vw, 1.7rem); font-weight: 800; margin-bottom: 0.5rem; position: relative; }
     .dl-card > p { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.25rem; line-height: 1.55; position: relative; }
 
-    /* ---- compact download button ---- */
+    /* ---- compact download button (centered) ---- */
     .dl-btn {
       display: inline-flex;
       align-items: center;
@@ -458,7 +465,7 @@
       gap: 0.4rem;
       background: linear-gradient(135deg, var(--primary), #4f46e5);
       color: white;
-      padding: 0.65rem 1.4rem;
+      padding: 0.6rem 1.4rem;
       border-radius: var(--radius);
       font-size: 0.85rem;
       font-weight: 700;
@@ -466,12 +473,12 @@
       box-shadow: 0 6px 20px -4px var(--primary-glow);
       transition: all 0.15s ease;
       -webkit-tap-highlight-color: transparent;
-      width: auto;
-      min-width: 160px;
-      position: relative;
-      overflow: hidden;
       border: none;
       cursor: pointer;
+      margin: 0 auto;
+      min-width: 140px;
+      position: relative;
+      overflow: hidden;
     }
     .dl-btn::after {
       content: '';
@@ -532,7 +539,18 @@
       .ss-item { height: 420px; }
       .stats-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
       .stat-item .stat-number { font-size: 1.8rem; }
-      .dl-btn { padding: 0.6rem 1.2rem; font-size: 0.8rem; min-width: 140px; }
+      .dl-btn { padding: 0.55rem 1.2rem; font-size: 0.8rem; min-width: 130px; }
+
+      /* Center feature cards on mobile */
+      .feat {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .feat-icon { margin-bottom: 0.3rem; }
+
+      /* FAQ items stay full width but container is centered */
+      .faq { padding: 3rem 1.25rem; }
     }
 
     @media (min-width: 768px) {
@@ -551,7 +569,7 @@
       }
       .hero h1 { font-size: 3rem; max-width: 480px; }
       .hero-desc { font-size: 1.05rem; max-width: 400px; }
-      .hero-btns { flex-direction: row; width: auto; max-width: none; }
+      .hero-btns { flex-direction: row; width: auto; max-width: none; margin: 0; }
       .btn { width: auto; padding: 0.85rem 1.75rem; }
       .phone-wrap { margin-top: 0; }
       .phone { width: 240px; height: 480px; }
@@ -568,7 +586,7 @@
       .faq { padding: 4rem 2rem; }
       .download { padding: 5rem 2rem; }
       .dl-card { padding: 2.5rem 2rem; }
-      .dl-btn { padding: 0.7rem 1.6rem; font-size: 0.88rem; min-width: 180px; }
+      .dl-btn { padding: 0.7rem 1.8rem; font-size: 0.9rem; min-width: 160px; }
     }
 
     @media (min-width: 1024px) {
@@ -750,7 +768,7 @@
     </div>
   </section>
 
-  <!-- ===== FAQ ===== -->
+  <!-- ===== FAQ (centered) ===== -->
   <section class="faq" id="faq">
     <div class="sec-head reveal">
       <h2>Frequently Asked Questions</h2>
@@ -786,7 +804,7 @@
     </div>
   </section>
 
-  <!-- ===== DOWNLOAD (compact button) ===== -->
+  <!-- ===== DOWNLOAD (compact button, centered) ===== -->
   <section class="download" id="download">
     <div class="dl-card reveal">
       <h2>Ready to Save on Your Bills?</h2>
