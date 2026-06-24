@@ -391,7 +391,7 @@
     .testimonial p { color: var(--text-dim); font-size: 0.9rem; margin: 0.5rem 0; line-height: 1.5; }
     .testimonial .author { color: var(--text-muted); font-size: 0.8rem; font-weight: 500; }
 
-    /* ----- FAQ (centered) ----- */
+    /* ----- FAQ (centered with question top and arrow below) ----- */
     .faq { padding: 3rem 1.25rem; max-width: 700px; margin: 0 auto; }
     .faq-item {
       background: var(--bg-card);
@@ -405,19 +405,26 @@
       width: 100%;
       background: transparent;
       border: none;
-      padding: 1rem 1.25rem;
+      padding: 1rem 1.25rem 0.5rem;
       font-size: 0.95rem;
       font-weight: 600;
       color: var(--text);
-      text-align: left;
+      text-align: center;
       cursor: pointer;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
+      gap: 0.4rem;
       transition: background 0.2s;
     }
     .faq-question:hover { background: rgba(255,255,255,0.02); }
-    .faq-question .arrow { transition: transform 0.25s; font-size: 0.8rem; color: var(--text-muted); }
+    .faq-question .arrow {
+      transition: transform 0.3s ease;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: inline-block;
+      line-height: 1;
+    }
     .faq-question.active .arrow { transform: rotate(180deg); }
     .faq-answer {
       max-height: 0;
@@ -427,7 +434,7 @@
       color: var(--text-muted);
       font-size: 0.88rem;
       line-height: 1.6;
-      text-align: left;
+      text-align: center;
     }
     .faq-answer.open {
       max-height: 300px;
@@ -541,7 +548,6 @@
       .stat-item .stat-number { font-size: 1.8rem; }
       .dl-btn { padding: 0.55rem 1.2rem; font-size: 0.8rem; min-width: 130px; }
 
-      /* Center feature cards on mobile */
       .feat {
         flex-direction: column;
         align-items: center;
@@ -549,8 +555,9 @@
       }
       .feat-icon { margin-bottom: 0.3rem; }
 
-      /* FAQ items stay full width but container is centered */
       .faq { padding: 3rem 1.25rem; }
+      .faq-question { padding: 1rem 1rem 0.4rem; font-size: 0.9rem; }
+      .faq-answer { font-size: 0.85rem; }
     }
 
     @media (min-width: 768px) {
@@ -587,6 +594,8 @@
       .download { padding: 5rem 2rem; }
       .dl-card { padding: 2.5rem 2rem; }
       .dl-btn { padding: 0.7rem 1.8rem; font-size: 0.9rem; min-width: 160px; }
+      .faq-question { padding: 1.25rem 1.5rem 0.6rem; font-size: 1rem; }
+      .faq-answer { font-size: 0.9rem; }
     }
 
     @media (min-width: 1024px) {
@@ -768,7 +777,7 @@
     </div>
   </section>
 
-  <!-- ===== FAQ (centered) ===== -->
+  <!-- ===== FAQ (centered: question top, arrow below) ===== -->
   <section class="faq" id="faq">
     <div class="sec-head reveal">
       <h2>Frequently Asked Questions</h2>
@@ -874,7 +883,7 @@
     buildDots(); renderSlide(0);
     document.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight') nextSlide(); if (e.key === 'ArrowLeft') prevSlide(); });
 
-    // ----- FAQ toggle -----
+    // ----- FAQ toggle (with arrow below) -----
     function toggleFaq(btn) {
       const answer = btn.nextElementSibling;
       const isOpen = answer.classList.contains('open');
