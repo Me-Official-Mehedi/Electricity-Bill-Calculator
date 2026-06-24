@@ -1,0 +1,11 @@
+{
+  "notifications": [
+    {
+      "notification_title": "Title Here",
+      "notification_content": "Content Here",
+      "notificaton_image": "Image URL",
+      "timestamp": "1712345678901",
+      "url": "https://example.com"
+    }
+  ]
+}
