@@ -1,7 +1,7 @@
 {
   "pdfs": [
     {
-      "name": "January 2024 Bill Policy",
+      "name": "June 2026 Update Tariff Rate",
       "pdf_url": "https://dpdc.gov.bd/pages/static-pages/6922de6f933eb65569e1a9c4",
       "image": "https://raw.githubusercontent.com/Me-Official-Mehedi/Electricity-Bill-Calculator/refs/heads/main/pdf.png"
     }
@@ -11,7 +11,7 @@
 Updated tariff rates.
 New Update Screen.
 Many More.",
-    "recent_version": "1.1.0",
+    "recent_version": "1.1.1",
     "url": "https://electricity-bill-calculator-snowy.vercel.app/"
   }
 }
