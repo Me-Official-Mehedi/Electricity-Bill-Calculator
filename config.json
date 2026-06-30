@@ -11,8 +11,9 @@
 Updated tariff rates.
 New update screen.
 New tariff activity.
+New Appliances Calculation.
 Many More.",
-    "recent_version": "1.1.1",
+    "recent_version": "1.1.2",
     "url": "https://electricity-bill-calculator-snowy.vercel.app/"
   }
 }
